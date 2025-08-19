@@ -55,7 +55,7 @@ const SliderModule = ({ movies }) => {
               {movie.title}
             </h2>
             <div className="flex flex-row gap-4 my-5">
-            <p className="text-green-400 text-xl md:text-2xl font-semibold mt-2">
+            <p className="text-red-700 md:text-amber-300 text-xl md:text-2xl font-semibold mt-2">
               ⭐ {movie.vote_average}
             </p>
             <SlLike

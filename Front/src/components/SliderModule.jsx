@@ -50,8 +50,8 @@ const SliderModule = ({ movies }) => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_80%)]" />
           </Link>
           {/* Texto */}
-          <div className="absolute top-[40%] left-[5%] max-w-[40%] text-white z-20">
-            <h2 className="text-4xl md:text-7xl font-bold break-words">
+          <div className="absolute top-[30%] left-[5%] max-w-[80%] md:top-[40%] md:left-[5%] md:max-w-[40%] text-white z-20">
+            <h2 className="text-4xl md:text-7xl font-bold md:break-words">
               {movie.title}
             </h2>
             <div className="flex flex-row gap-4 my-5">

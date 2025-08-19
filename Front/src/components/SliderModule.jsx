@@ -16,12 +16,12 @@ const SliderModule = ({ movies }) => {
     setCurrentIndex((prev) => (prev - 1 + movies.length) % movies.length);
   };
 
-  // Calcula el orden rotativo de miniaturas (sin incluir la actual)
+
   const getRotatingThumbnails = () => {
     return movies
       .slice(currentIndex + 1)
       .concat(movies.slice(0, currentIndex))
-      .slice(0, 5); // máximo 5 miniaturas visibles
+      .slice(0, 5);
   };
 
   
@@ -29,7 +29,6 @@ const SliderModule = ({ movies }) => {
   return (
     <div className="relative max-w-full h-screen overflow-hidden bg-black">
       <NavBar showSearch={true} customClasses="" />
-      {/* Fondo con transiciones */}
       {movies.map((movie, index) => (
         <div
           key={movie.id}
@@ -46,16 +45,14 @@ const SliderModule = ({ movies }) => {
             className="w-full h-full object-cover"
           />
           
-          {/* Sombra radial */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_80%)]" />
           </Link>
-          {/* Texto */}
           <div className="absolute top-[30%] left-[5%] max-w-[80%] md:top-[40%] md:left-[5%] md:max-w-[40%] text-white z-20">
             <h2 className="text-4xl md:text-7xl font-bold md:break-words">
               {movie.title}
             </h2>
             <div className="flex flex-row gap-4 my-5">
-            <p className="text-red-700 md:text-amber-300 text-xl md:text-2xl font-semibold mt-2">
+            <p className="text-green-400 text-xl md:text-2xl font-semibold mt-2">
               ⭐ {movie.vote_average}
             </p>
             <SlLike
@@ -72,7 +69,6 @@ const SliderModule = ({ movies }) => {
         </div>
       ))}
 
-      {/* Miniaturas (sin la actual, rotativas) */}
       <div className="absolute top-[70%] left-[90%] -translate-x-1/2 z-30 w-full flex justify-center">
         <div className="flex gap-3 overflow-hidden max-w-[90vw] px-4">
           {getRotatingThumbnails().map((movie, i) => (
@@ -93,7 +89,6 @@ const SliderModule = ({ movies }) => {
         </div>
       </div>
 
-      {/* Botones navegación */}
       <div className="absolute top-[85%] left-1/2 -translate-x-1/2 flex gap-4 z-30">
         <button
           onClick={goToPrev}
